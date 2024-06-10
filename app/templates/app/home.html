@@ -1,0 +1,109 @@
+
+{% extends "app/base.html" %}
+{% load static %}
+
+
+{% block main-content %}
+<div class="intro-container">
+    <div class="row justify-content-center">
+        <div class="profile-img-container">
+            <img src="{% static 'app/images/ravi.JPEG' %}" alt="Profile Image" class="profile-img">
+        </div>
+    </div>
+    <h2 class="name text-center">Hey! I am Ravi</h2>
+    <p class=" intro-content text-center">
+      "Seeking a Python Django web developer to transform your digital dreams into stunning reality? Your search ends here."</p>
+</div>
+
+   <!-- New Area for Skills & Expertise -->
+   <section id="skills">
+    <!-- Content of your skills section goes here -->
+        <div class="skills-section">
+            <h2 class="text-center">Skills & Expertise</h2>
+            <div class="skills-list">
+                <div class="skill">
+                    <img src="{% static 'app/images/python.png' %}" alt="Skill 1" class="skill-img">
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'app/images/html.png' %}" alt="Skill 2" class="skill-img">
+                    <div class="skill-name">HTML5</div>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'app/images/css.png' %}" alt="Skill 1" class="skill-img">
+                    <div class="skill-name">CSS</div>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'app/images/bootstrap1.jpg' %}" alt="Skill 1" class="skill-img">
+                    <div class="skill-name">Bootstrap</div>
+                </div>
+                <div class="skill">
+                    <img src="{% static 'app/images/javascript.png' %}" alt="Skill 1" class="skill-img">
+                    <div class="skill-name">Javascript</div>
+                </div>
+                <div class="skill">
+                  <img src="{% static 'app/images/mysql.png' %}" alt="Skill 1" class="skill-img">
+                  <div class="skill-name">MySql</div>
+                </div>
+                <div class="skill">
+                  <img src="{% static 'app/images/git.png' %}" alt="Skill 1" class="skill-img">
+                  <div class="skill-name">Git/Github</div>
+                </div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+  </section>
+
+
+<section id="blog">
+    <div class="blogs-container">
+      <h2 class="section-title">My Blogs</h2>
+      <div class="blog-container">
+        {% for blog in blogs %}
+        <div class="blog-card">
+          <a href="{% url 'blog_detail' blog.id %}">
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+            <h3 class="blog-title">{{ blog.title }}</h3>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>
+  
+  
+
+<section id="connect"> 
+    <div class="contact-container">
+        <h2>Let's connect and build something extraordinary</h2>
+        <div class="social-container">
+            <div class="social-links">
+                {% comment %} <a class="social-link" href="https://www.facebook.com/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook">
+                </a> {% endcomment %}
+                <a class="social-link" href="https://www.instagram.com/fitcoderr?igsh=a2h3amJpMzRkaXdv">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram">
+                </a>
+                {% comment %} <a class="social-link" href="https://wa.me/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp">
+                </a> {% endcomment %}
+                {% comment %} <a class="social-link" href="mailto:your.email@gmail.com">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1200px-Gmail_icon_%282020%29.svg.png" alt="Gmail">
+                </a> {% endcomment %}
+                <a class="social-link" href="https://www.linkedin.com/in/ravi-yadav-41a0422a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                </a>
+                <a class="social-link" href="https://github.com/rraoavi">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+
+
+
+
+{% endblock main-content %}

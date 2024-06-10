@@ -1,0 +1,26 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block title %}Blogs{% endblock title %}
+{% block main-content %}
+<div class="title">{{ blog.title }}</div>
+<div class="blog-image-container">
+    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+    <p class="date-time">Published on: {{ blog.date_created }}</p>
+</div>
+<div class="blog-content-container">
+    <h5 class="sub-heading">{{blog.subheading1}}</h5>
+    <p class="blog-content">{{ blog.content1 }}</p>
+    <h5 class="sub-heading">{{blog.subheading2}}</h5>
+    <p class="blog-content">{{ blog.content2 }}</p>
+    <h5 class="sub-heading">{{blog.subheading3}}</h5>
+    <p class="blog-content">{{ blog.content3 }}</p>
+    <h5 class="sub-heading">{{blog.subheading4}}</h5>
+    <p class="blog-content">{{ blog.content4 }}</p>
+    <h5 class="sub-heading">{{blog.subheading5}}</h5>
+    <p class="blog-content">{{ blog.content5 }}</p>
+    <h5 class="sub-heading">{{blog.subheading6}}</h5>
+    <p class="blog-content">{{ blog.content6 }}</p>
+    <h5 class="sub-heading">{{blog.subheading7}}</h5>
+    <p class="blog-content">{{ blog.content7 }}</p>
+</div>
+{% endblock main-content %}
